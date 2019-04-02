@@ -6,7 +6,7 @@
 
     <groupId>nl.topicus.overheid</groupId>
     <artifactId>kamel</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
 
     <name>Kamel</name>
     <description>Kotlin DSL for Apache Camel</description>
@@ -32,11 +32,11 @@
             </roles>
         </developer>
     </developers>
-    <scm>
-        <connection>scm:git:https://github.com/topicusoverheid/kamel.git</connection>
-        <developerConnection>scm:git:https://github.com/topicusoverheid/kamel.git</developerConnection>
-        <url>https://github.com/topicusoverheid/kamel</url>
-    </scm>
+    <!--<scm>-->
+        <!--<connection>scm:git:https://github.com/topicusoverheid/kamel.git</connection>-->
+        <!--<developerConnection>scm:git:https://github.com/topicusoverheid/kamel.git</developerConnection>-->
+        <!--<url>https://github.com/topicusoverheid/kamel</url>-->
+    <!--</scm>-->
 
     <properties>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
@@ -51,16 +51,16 @@
         <gpg.keyname>AC025E3F</gpg.keyname>
     </properties>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-        </repository>
-    </distributionManagement>
+    <!--<distributionManagement>-->
+        <!--<snapshotRepository>-->
+            <!--<id>ossrh</id>-->
+            <!--<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+        <!--</snapshotRepository>-->
+        <!--<repository>-->
+            <!--<id>ossrh</id>-->
+            <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
+        <!--</repository>-->
+    <!--</distributionManagement>-->
 
     <dependencyManagement>
         <dependencies>
@@ -137,24 +137,24 @@
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>${maven-gpg-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                        <configuration>
-                            <keyname>${gpg.keyname}</keyname>
-                            <passphraseServerId>${gpg.keyname}</passphraseServerId>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-gpg-plugin</artifactId>-->
+                <!--<version>${maven-gpg-plugin.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>sign-artifacts</id>-->
+                        <!--<phase>verify</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>sign</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<keyname>${gpg.keyname}</keyname>-->
+                            <!--<passphraseServerId>${gpg.keyname}</passphraseServerId>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -168,19 +168,19 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.jetbrains.dokka</groupId>
-                <artifactId>dokka-maven-plugin</artifactId>
-                <version>${dokka.version}</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>javadocJar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.jetbrains.dokka</groupId>-->
+                <!--<artifactId>dokka-maven-plugin</artifactId>-->
+                <!--<version>${dokka.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>javadocJar</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 </project>

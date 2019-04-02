@@ -2,6 +2,7 @@ package nl.topicus.overheid.kamel
 
 import org.apache.camel.Exchange
 import org.apache.camel.Expression
+import org.apache.camel.model.ExpressionNode
 import org.apache.camel.model.ProcessorDefinition
 import org.apache.camel.model.SplitDefinition
 import org.apache.camel.model.dataformat.JsonLibrary
@@ -48,3 +49,10 @@ fun ProcessorDefinition<*>.marshal(jsonLibrary: JsonLibrary): ProcessorDefinitio
  */
 fun ProcessorDefinition<*>.split(expression: Expression, toApply: SplitDefinition.() -> Unit): ProcessorDefinition<*> =
     split(expression).apply(toApply).end()
+
+fun ProcessorDefinition<*>.split(toRun: () -> Expression, toApply: SplitDefinition.() -> Unit): ProcessorDefinition<*> =
+    split(toRun.invoke()).apply(toApply).end()
+
+fun SplitDefinition.configure(configuration: SplitDefinition.() -> Unit): ExpressionNode {
+    return apply(configuration)
+}
